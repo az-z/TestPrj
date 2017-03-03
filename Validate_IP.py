@@ -63,18 +63,22 @@ def main():
     print("Total number of requests is {}".format(query_list_count))
     print("Number of unique requests is {}".format(len(query_count.keys())))
 
-    out_list = []
+    out_list = {}
     for host, host_cnt in query_count.items():
         # print ("host - {}, host_cnt - {}".format(host,host_cnt))
-        out_list.extend([[host,host_cnt,round(host_cnt/(1.0*query_list_count),ndigits=5)*100]])
+        # out_list.extend([[host,host_cnt,round(host_cnt/(1.0*query_list_count),ndigits=5)*100]])
+        out_list.update( {host:[host_cnt,round(host_cnt/(1.0*query_list_count),ndigits=5)*100]})
+
+    print out_list
 
     #Validate QUERY
     # for i in query_uniq_list,
+    exit(1)
 
     ar = asynr.AsyncResolver(query_uniq_list, intensity=500)
     start = time()
 
-    # TODO : convert to dict {inner[0]: inner[1:] for inner in outer}
+    # TODO : convert to dict  - {inner[0]: inner[1:] for inner in outer}
 
 
     for host, ip in ar.resolve().items():
