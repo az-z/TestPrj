@@ -69,14 +69,17 @@ def main():
         out_list.extend([[host,host_cnt,round(host_cnt/(1.0*query_list_count),ndigits=5)*100]])
 
     #Validate QUERY
-    for i in query_uniq_list,
+    # for i in query_uniq_list,
 
     ar = asynr.AsyncResolver(query_uniq_list, intensity=500)
     start = time()
 
+    # TODO : convert to dict {inner[0]: inner[1:] for inner in outer}
+
+
     for host, ip in ar.resolve().items():
         if ip is None:
-            [x.append(ip) for x in out_list if x[0]==host]
+            [x.append('None') for x in out_list if x[0]==host]
     end = time()
     print "It took %.2f seconds to process unique requests." % (end - start)
 
