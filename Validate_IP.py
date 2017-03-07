@@ -49,7 +49,6 @@ def main():
 
     query = data[colnames[0]].tolist()
 
-    # TODO : count the existing queries so i can preserve the counts
     query_count = defaultdict(int)
     for q in query:
         query_count[q] += 1
