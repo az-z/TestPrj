@@ -82,7 +82,7 @@ def main():
         #     # [x.append('None') for x in out_list if x[0]==host]
 
     end = time()
-    print "It took %.2f seconds to process unique requests." % (end - start)
+    print "It took %.2f seconds to process all unique requests." % (end - start)
     out_df = pandas.DataFrame.from_dict(out_list,orient='index',)
 
     # out_df = pandas.DataFrame(out_list,columns=None,)
