@@ -1,5 +1,4 @@
 #!/bin/python
-__author__ = 'Andrew Zyman @SailTech LLC'
 # import subprocess
 import argparse
 import os.path, sys
